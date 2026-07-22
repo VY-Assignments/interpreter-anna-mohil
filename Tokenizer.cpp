@@ -41,7 +41,7 @@ Token Tokenizer::readIdent() {
         advance();
     }
     std::string text = src.substr(start, pos - start);
-    return Token(TokenType::IDENTIFICATOR, text)
+    return Token(TokenType::IDENTIFICATOR, text);
 }
 
 std::vector<Token> Tokenizer::tokenize() {
