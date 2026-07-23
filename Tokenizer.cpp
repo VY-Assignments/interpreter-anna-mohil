@@ -3,7 +3,7 @@
 //
 
 #include "Tokenizer.h"
-#include <stdexpect>
+#include <stdexcept>
 #include <cctype>
 
 #include "Token.h"

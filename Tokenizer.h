@@ -4,7 +4,7 @@
 
 #include <vector>
 #include <string>
-
+#include "Token.h"
 #ifndef INTERPRETER_ANNA_MOHIL_TOKENIZER_H
 #define INTERPRETER_ANNA_MOHIL_TOKENIZER_H
 

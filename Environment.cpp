@@ -4,7 +4,7 @@
 
 #include "Environment.h"
 #include "AST.h"
-#include <stdexpect>
+#include <stdexcept>
 
 Environment::Environment(Environment *parent): parent(parent) {}
 
@@ -12,16 +12,16 @@ Environment *Environment::root() {
     Environment* e = this;
     while (e->parent) {
         e = e->parent;
-        return e;
     }
+    return e;
 }
 
 const Environment *Environment::root() const {
     const Environment* e = this;
     while (e->parent) {
         e = e->parent;
-        return e;
     }
+    return e;
 }
 
 bool Environment::hasVar(const std::string& name) const {

@@ -15,12 +15,12 @@ const Token& Parser::advance() {
     const Token& t = tokens[pos];
     if (pos + 1 < tokens.size()) {
         pos++;
-        return t;
     }
+    return t;
 }
 
 bool Parser::check(TokenType type) const {
-    return current().type == type;
+    return current().token_type == type;
 }
 
 const Token& Parser::expect(TokenType type, const std::string& errorMsg) {
@@ -98,7 +98,7 @@ ExprPtr Parser::parseTerm() {
 
 ExprPtr Parser::parseFactor() {
     if (check(TokenType::NUMBER)) {
-        Tokenb t = advance();
+        Token t = advance();
         return std::make_shared<NumExpr>(t.number);
     }
 

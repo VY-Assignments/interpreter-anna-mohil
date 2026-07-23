@@ -8,6 +8,8 @@
 #include "Value.h"
 #include <string>
 #include <vector>
+#include <unordered_map>
+#include <iostream>
 
 class Expr {
 public:
@@ -56,7 +58,7 @@ public:
             case '-': return Value::num(a - b);
             case '*': return Value::num(a * b);
             case '/':
-                if (b = 0.0) throw std::runtime_error("Division by zero");
+                if (b == 0.0) throw std::runtime_error("Division by zero");
                 return Value::num(a / b);
         }
         throw std::runtime_error("Unknown operator");
